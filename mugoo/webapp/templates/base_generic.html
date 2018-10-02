@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+    <title>Mugoo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+   <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+
+
+</head>
+<body>
+ {% block topbar %}
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Mugoo</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+ {% block logo %}
+ <div class="container" style="margin-top: 8%;">
+<div class="col-md-6 col-md-offset-3">
+<div class="row">
+<div id="logo" class="text-center">
+<h1>Mugoo</h1><p>Lover of Dead Tree Version Books</p>
+</div>
+</div>
+</div>
+</div>
+ {% endblock %}
+ {% block searchbar %}
+
+<div class="col-md-6 col-md-offset-3">
+<div class="row">
+<form role="form" id="form-buscar">
+<div class="form-group">
+<div class="input-group">
+<input id="1" class="form-control" type="text" name="q" placeholder="Search..." required/>
+<span class="input-group-btn">
+<button id="search" class="btn btn-success" type="submit">
+Search
+</button>
+</span>
+</div>
+</div>
+</form>
+</div>
+</div>
+ <div class="container">
+
+    <hgroup class="mb20">
+		<p>Search Results</p>
+		<p class="lead"><strong class="text-danger" id="count"></strong> results were found for the search for <strong class="text-danger" id="search_term"></strong></p>
+	</hgroup>
+
+</div>
+<ul id="searchlist">
+
+</ul>
+ {% endblock %}
+{% block content %}
+
+ {% endblock %}
+</body>
+<script src="{% static 'js/custom.js' %}"></script>
+</html>
